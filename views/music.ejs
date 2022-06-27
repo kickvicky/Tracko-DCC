@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Simple Music Player</title>
+    <!-- Load FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+    <!-- Load the custom CSS style file -->
+    <link rel="stylesheet" type="text/css" href="/css/music.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
+    <script>
+        var sound = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3')
+        function playMusic() {
+            sound.play()
+        }
+    </script>
+</head>
+
+<body>
+    <div class="player">
+        <div class="details">
+            <div class="track-art"></div>
+            <div class="track-name">Say It Slow</div>
+            <div class="track-artist">Daniela Jones</div>
+        </div>
+        <div class="buttons">
+            <div class="prev-track" onclick="prevMusic()"><i class="fa fa-step-backward fa-2x"></i></div>
+            <div class="playpause-track" onclick="playMusic()"><i class="fa fa-play-circle fa-5x"></i></div>
+            <div class="next-track" onclick="nextTrack()"><i class="fa fa-step-forward fa-2x"></i></div>
+        </div>
+        <div class="slider_container">
+            <div class="current-time">00:00</div>
+            <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+            <div class="total-duration">00:00</div>
+        </div>
+        <div class="slider_container">
+            <i class="fa fa-volume-down"></i>
+            <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+            <i class="fa fa-volume-up"></i>
+        </div>
+    </div>
+</body>
+
+</html>

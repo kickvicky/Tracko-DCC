@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/quiz.css">
+    <title>Quiz</title>
+    <script>
+        var ans = 0;
+        function displayBack(ans) {
+            if (ans <= 5) {
+                document.body.style.color = "red";
+                document.getElementById("heading-h1").innerHTML = "Alarming! Please Socialize More !!!"
+            }
+            else if (ans <= 10) {
+                document.body.style.color = "orange";
+                document.getElementById("heading-h1").innerHTML = "Mildly lonely! A lone wolf yeh !"
+            }
+            else {
+                document.body.style.color = "green";
+                document.getElementById("heading-h1").innerHTML = "Cool! Great keep up the good work !!!"
+            }
+        }
+
+        function RadioScore() {
+            var j, i;
+            var ele1 = document.getElementsByName('optionsRadio1');
+            var ele2 = document.getElementsByName('optionsRadio2');
+            var ele3 = document.getElementsByName('optionsRadio3');
+            var ele4 = document.getElementsByName('optionsRadio4');
+            var ele5 = document.getElementsByName('optionsRadio5');
+            for (i = 0; i < ele1.length; i++) {
+                if (ele1[i].checked)
+                    ans += i + 1;
+            }
+            for (i = 0; i < ele2.length; i++) {
+                if (ele2[i].checked)
+                    ans += i + 1;
+            }
+            for (i = 0; i < ele3.length; i++) {
+                if (ele3[i].checked)
+                    ans += i + 1;
+            }
+            for (i = 0; i < ele4.length; i++) {
+                if (ele4[i].checked)
+                    ans += i + 1;
+            }
+            for (i = 0; i < ele5.length; i++) {
+                if (ele5[i].checked)
+                    ans += i + 1;
+            }
+            displayBack(ans);
+        }
+
+        function reset() {
+            location.reload();
+        }
+
+        function startMusic() {
+            if (ans <= 5) {
+                var url = "/musicsad";
+                window.location = url;
+            }
+            else if (ans <= 10) {
+                var url = "/musicmod";
+                window.location = url;
+            }
+            else {
+                var url = "/music";
+                window.location = url;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"> Welcome, <%= userName %> </a>
+    </nav>
+    <h1 id="heading-h1">Psychology Questionaire</h1>
+    <div class="container">
+        <div class="navbar navbar-inverse navbar-static-top">
+            <!-- /navbar -->
+            <div class="col-md-10 column topr">
+                <!--  action="/quiz" method="POST" -->
+                <form>
+                    <div class="panel panel-primary">
+                        <div class="question-box">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    Q1. How Lonely do you feel
+                                </h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadio1" id="optionsRadios1" value="option1">
+                                        I am surrounded by people, but still am lonely
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadio1" id="optionsRadios2" value="option2">
+                                        I speak with a limited amount of people on a regular basis
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadio1" id="optionsRadios3" value="option3">
+                                        Opzione
+                                        I rarely socialize and am lonely most of the time
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios1" id="optionsRadios4" value="option4">
+                                        I ain't lonely at all
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="question-box">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    Q2. How Lonely do you feel
+                                </h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadio2" id="optionsRadios1" value="option1">
+                                        I am surrounded by people, but still am lonely
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadio2" id="optionsRadios2" value="option2">
+                                        I speak with a limited amount of people on a regular basis
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadio2" id="optionsRadios3" value="option3">
+                                        Opzione
+                                        I rarely socialize and am lonely most of the time
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadio2" id="optionsRadios4" value="option4">
+                                        I ain't lonely at all
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="question-box">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    Q3. How Lonely do you feel
+                                </h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadio3" id="optionsRadios1" value="option1">
+                                        I am surrounded by people, but still am lonely
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadio3" id="optionsRadios2" value="option2">
+                                        I speak with a limited amount of people on a regular basis
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadio3" id="optionsRadios3" value="option3">
+                                        Opzione
+                                        I rarely socialize and am lonely most of the time
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadio3" id="optionsRadios4" value="option4">
+                                        I ain't lonely at all
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="question-box">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    Q4. How Lonely do you feel
+                                </h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadio4" id="optionsRadios1" value="option1">
+                                        I am surrounded by people, but still am lonely
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadio4" id="optionsRadios2" value="option2">
+                                        I speak with a limited amount of people on a regular basis
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadio4" id="optionsRadios3" value="option3">
+                                        Opzione
+                                        I rarely socialize and am lonely most of the time
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadio4" id="optionsRadios4" value="option4">
+                                        I ain't lonely at all
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="question-box">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    Q5. How Lonely do you feel
+                                </h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadio5" id="optionsRadios1" value="option1">
+                                        I am surrounded by people, but still am lonely
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadio5" id="optionsRadios2" value="option2">
+                                        I speak with a limited amount of people on a regular basis
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadio5" id="optionsRadios3" value="option3">
+                                        Opzione
+                                        I rarely socialize and am lonely most of the time
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadio5" id="optionsRadios4" value="option4">
+                                        I ain't lonely at all
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <a href="#" class="btn btn-primary" role="button" onclick="RadioScore()">Get Mood</a>
+                            <a href="#" class="btn btn-default" role="button" onclick="reset()">Reset</a>
+                        </div>
+                    </div>
+                </form>
+                <button class="pulse" onclick="startMusic()">Start Vibing</button>
+            </div>
+        </div>
+</body>
+
+</html>

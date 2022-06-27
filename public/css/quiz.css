@@ -1,0 +1,89 @@
+body {
+    background: url('/images/quizDP.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a {
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.question-box {
+    padding: 10px;
+    background-color: rgba(77, 93, 185, 0.9);
+    color: white;
+    margin: 25px 10%;
+    box-shadow: 3px 3px rgba(60, 55, 133, 0.399), -0.3em 0 .3em rgb(90, 108, 121);
+    border-radius: 25px;
+}
+
+.panel-heading {
+    padding: 10px;
+}
+
+.panel-footer {
+    text-align: center;
+}
+
+/*
+  https://developer.mozilla.org/en/docs/Web/CSS/box-shadow
+  box-shadow: [inset?] [top] [left] [blur] [size] [color];
+
+  Tips:
+    - We're setting all the blurs to 0 since we want a solid fill.
+    - Add the inset keyword so the box-shadow is on the inside of the element
+    - Animating the inset shadow on hover looks like the element is filling in from whatever side you specify ([top] and [left] accept negative values to become [bottom] and [right])
+    - Multiple shadows can be stacked
+    - If you're animating multiple shadows, be sure to keep the same number of shadows on hover/focus as non-hover/focus (even if you have to create a transparent shadow) so the animation is smooth. Otherwise, you'll get something choppy.
+*/
+
+
+
+.pulse:hover,
+.pulse:focus {
+    animation: pulse 1s;
+    box-shadow: 0 0 0 2em transparent;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 var(--hover);
+    }
+}
+
+
+
+.pulse {
+    margin: 25px 43%;
+    --color: #ffffff;
+    --hover: #ef8f6e;
+    background-color: #fc5454;
+}
+
+button {
+    color: var(--color);
+    transition: 0.25s;
+}
+
+button:hover,
+button:focus {
+    border-color: var(--hover);
+    color: rgb(226, 223, 223);
+}
+
+
+button {
+    background: none;
+    border: 2px solid;
+    font: inherit;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
+}
